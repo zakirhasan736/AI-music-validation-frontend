@@ -1,0 +1,21 @@
+import React from 'react';
+
+const ArrowRightIcon: React.FC = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M9.70697 16.9496L15.414 11.2426L9.70697 5.53564L8.29297 6.94964L12.586 11.2426L8.29297 15.5356L9.70697 16.9496Z"
+        fill="white"
+        style={{ fill: '#ffffff', fillOpacity: '1' }}
+      />
+    </svg>
+  );
+};
+
+export default ArrowRightIcon;
