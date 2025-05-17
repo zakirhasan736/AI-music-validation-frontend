@@ -165,9 +165,21 @@ const ResetPassword = () => {
         localStorage.removeItem(`reset_expiry_${email}`);
         router.push('/auth/login');
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      toast.error(err.response?.data?.detail || '❌ Something went wrong');
+      if (
+        typeof err === 'object' &&
+        err !== null &&
+        'response' in err &&
+        typeof (err as { response?: { data?: { detail?: string } } }).response === 'object'
+      ) {
+        toast.error(
+          (err as { response?: { data?: { detail?: string } } }).response?.data?.detail ||
+            '❌ Something went wrong'
+        );
+      } else {
+        toast.error('❌ Something went wrong');
+      }
     } finally {
       setLoading(false);
     }

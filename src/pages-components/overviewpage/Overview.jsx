@@ -12,34 +12,34 @@ import {
 } from '@/icons';
 
 // 🖼️ Instrument to Image Mapping
-const instrumentImageUrls: Record<string, string> = {
-  Piano:
-    'https://upload.wikimedia.org/wikipedia/commons/5/55/Grand_piano_Concert.png',
-  'Acoustic Guitar':
-    'https://upload.wikimedia.org/wikipedia/commons/4/45/GuitareClassique5.png',
-  'Electric Guitar':
-    'https://upload.wikimedia.org/wikipedia/commons/3/31/Fender_Stratocaster.png',
-  Violin:
-    'https://upload.wikimedia.org/wikipedia/commons/a/aa/Violin_VL100.png',
-  Cello: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Cello_front.png',
-  Trumpet: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Trumpet_1.png',
-  Flute: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Flute.png',
-  Clarinet: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Clarinet.png',
-  Organ:
-    'https://upload.wikimedia.org/wikipedia/commons/8/86/Pipe_organ_-_detail.png',
-  Saxophone:
-    'https://upload.wikimedia.org/wikipedia/commons/e/e0/Alto_Saxophone.png',
-  Voice:
-    'https://upload.wikimedia.org/wikipedia/commons/4/4a/Voice_microphone.png',
-};
+// const instrumentImageUrls: Record<string, string> = {
+//   Piano:
+//     'https://upload.wikimedia.org/wikipedia/commons/5/55/Grand_piano_Concert.png',
+//   'Acoustic Guitar':
+//     'https://upload.wikimedia.org/wikipedia/commons/4/45/GuitareClassique5.png',
+//   'Electric Guitar':
+//     'https://upload.wikimedia.org/wikipedia/commons/3/31/Fender_Stratocaster.png',
+//   Violin:
+//     'https://upload.wikimedia.org/wikipedia/commons/a/aa/Violin_VL100.png',
+//   Cello: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Cello_front.png',
+//   Trumpet: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Trumpet_1.png',
+//   Flute: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Flute.png',
+//   Clarinet: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Clarinet.png',
+//   Organ:
+//     'https://upload.wikimedia.org/wikipedia/commons/8/86/Pipe_organ_-_detail.png',
+//   Saxophone:
+//     'https://upload.wikimedia.org/wikipedia/commons/e/e0/Alto_Saxophone.png',
+//   Voice:
+//     'https://upload.wikimedia.org/wikipedia/commons/4/4a/Voice_microphone.png',
+// };
 
 
 const ITEMS_PER_PAGE = 6;
 
-const ResultPage = ({ result }: { result: any }) => {
+const ResultPage = ({ result }) => {
   const router = useRouter();
-  const [data, setData] = useState<any[]>([]);
-  const [items, setItems] = useState<any[]>([]);
+  const [data, setData] = useState([]);
+  const [items, setItems] = useState([]);
   const [expandedIndex, setExpandedIndex] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
 
@@ -160,7 +160,7 @@ const ResultPage = ({ result }: { result: any }) => {
                   Confidence Score
                 </p>
               </div>
-              {paginatedData.map((instrument, idx: number) => {
+              {paginatedData.map((instrument, idx) => {
                 // const instrument = item.instrument;
                 const isOpen = idx === expandedIndex;
                 return (
@@ -310,7 +310,7 @@ const ResultPage = ({ result }: { result: any }) => {
                                   alt={instrument.instrument_str}
                                   fill
                                   className="object-cover"
-                                  onError={(e: any) => {
+                                  onError={(e) => {
                                     e.target.src =
                                       '/images/instruments/instrument-image.jpg';
                                   }}

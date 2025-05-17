@@ -11,11 +11,12 @@ import ResultPage from '@/pages-components/overviewpage/Overview';
 
 
 export default function OverviewByIdPage() {
-  const { id } = useParams();
+  const params = useParams<{ id: string }>();
+  const id = params?.id;
   const router = useRouter();
   const dispatch = useDispatch();
   const { status } = useSession();
-  const [data, setData] = useState<any | null>(null);
+  const [data, setData] = useState<' ' | null>(null);
 
   useEffect(() => {
     if (!id) return;
@@ -30,9 +31,10 @@ export default function OverviewByIdPage() {
         setData(result);
         dispatch(setResult(result));
        
-      } catch (err) {
+      } catch {
         toast.error('❌ Could not load analysis result');
         router.push('/');
+        
       }
     };
 

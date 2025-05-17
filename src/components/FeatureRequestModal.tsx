@@ -74,7 +74,8 @@ const FeatureRequestModal = ({
           setProblem('');
           dispatch(resetFeedback());
         }, 3000);
-      } catch (err) {
+      } catch (error) {
+        console.error('Error submitting feedback:', error);
         dispatch(submitFail('Something went wrong!'));
         toast.error(' Submission failed');
       }

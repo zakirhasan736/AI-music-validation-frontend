@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const backend = process.env.NEXT_PUBLIC_API_URL;
 
-const refreshAccessToken = async (refreshToken: string) => {
+const refreshAccessToken = async (refreshToken) => {
   try {
     const res = await axios.post(`${backend}/auth/token/refresh`, {
       refresh_token: refreshToken,
@@ -22,18 +22,19 @@ const authOptions = {
     CredentialsProvider({
       name: 'Credentials',
       credentials: { email: {}, password: {} },
-      async authorize(credentials: any) {
+      async authorize(credentials) {
         try {
           const res = await axios.post(`${backend}/auth/login`, credentials);
           return { ...credentials, ...res.data };
         } catch (e) {
+          console.error(e);
           return null;
         }
       },
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
 

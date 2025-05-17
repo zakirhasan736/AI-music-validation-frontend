@@ -15,7 +15,7 @@ const LoginPageMain = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 const searchParams = useSearchParams();
-const redirectTo = searchParams.get('redirect') || '/';
+const redirectTo = searchParams?.get('redirect') || '/';
 const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -37,7 +37,9 @@ const [showPassword, setShowPassword] = useState(false);
        await signIn('google', { callbackUrl: redirectTo }); // ✅ Will redirect automatically
        // toast will be shown after redirect, if needed show one before:
        toast.loading('🔄 Redirecting to Google...');
-     } catch (err) {
+     } catch (error) {
+       // Handle error here
+       console.error('Error during Google login:', error);
        toast.error('❌ Google login failed');
      }
    };
@@ -132,7 +134,8 @@ const [showPassword, setShowPassword] = useState(false);
                 Forgot your password?
               </Link>
               <p className="mt-3 font-roboto font-normal text-mono-0 text-[16px] leading-[150%]">
-                Don't have an account?{' '}
+                {/* solved here issue */}
+                Don&#39;t have an account?{' '}
                 <Link
                   className="font-roboto underline font-normal text-mono-0 text-[16px] leading-[150%]"
                   href={`/auth/signup?redirect=${encodeURIComponent(

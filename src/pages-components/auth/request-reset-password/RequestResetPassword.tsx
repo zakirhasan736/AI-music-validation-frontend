@@ -27,9 +27,21 @@ const RequestResetPassword = () => {
       } else {
         toast.error('Failed to request password reset');
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      toast.error(err.response?.data?.detail || 'Request failed');
+      if (
+        typeof err === 'object' &&
+        err !== null &&
+        'response' in err &&
+        typeof (err as { response?: { data?: { detail?: string } } }).response === 'object'
+      ) {
+        toast.error(
+          (err as { response?: { data?: { detail?: string } } }).response?.data?.detail ||
+            'Request failed'
+        );
+      } else {
+        toast.error('Request failed');
+      }
     } finally {
       setLoading(false);
     }

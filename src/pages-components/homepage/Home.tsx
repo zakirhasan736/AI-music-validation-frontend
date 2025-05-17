@@ -49,7 +49,7 @@ const handleUpload = async (file: File) => {
     const id = res.data._id;
     if (!id) throw new Error('No ID returned from backend');
     router.push(`/overview/${id}`);
-  } catch (err: any) {
+  } catch (err: unknown) {
     if (axios.isCancel(err)) {
       console.log('Upload cancelled');
       toast.error('Upload cancelled');

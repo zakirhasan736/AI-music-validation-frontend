@@ -12,7 +12,7 @@ const Header = () => {
   const router = useRouter();
   const { data: session } = useSession();
 const searchParams = useSearchParams();
-const redirectTo = searchParams.get('redirect') || '/';
+const redirectTo = searchParams?.get('redirect') || '/';
   const handleLoginClick = () => {
     router.push('/auth/login');
   };
@@ -25,7 +25,9 @@ const redirectTo = searchParams.get('redirect') || '/';
        await signIn('google', { callbackUrl: redirectTo }); // ✅ Will redirect automatically
        // toast will be shown after redirect, if needed show one before:
        toast.loading('🔄 Redirecting to Google...');
-     } catch (err) {
+     } catch (error) {
+       // Handle error here
+       console.error(error);
        toast.error('❌ Google login failed');
      }
    };

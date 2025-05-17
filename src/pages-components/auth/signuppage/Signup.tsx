@@ -17,7 +17,7 @@ const SignupPageMain = () => {
  const [error, setError] = useState('');
  const router = useRouter();
 const searchParams = useSearchParams();
-const redirectTo = searchParams.get('redirect') || '/';
+const redirectTo = searchParams?.get('redirect') || '/';
 const [showPassword, setShowPassword] = useState(false);
 
  const handleSubmit = async (e: React.FormEvent) => {
@@ -31,7 +31,7 @@ const [showPassword, setShowPassword] = useState(false);
      await signIn('credentials', { redirect: false, email, password });
      router.push(redirectTo);
    } catch (err) {
-     setError('Signup failed.');
+     setError(`'Signup failed.' ${err}`);
    }
  };
 const handleGoogleLogin = async () => {
@@ -40,7 +40,7 @@ const handleGoogleLogin = async () => {
     // toast will be shown after redirect, if needed show one before:
     toast.loading('🔄 Redirecting to Google...');
   } catch (err) {
-    toast.error('❌ Google login failed');
+    toast.error(`'Google login failed.' ${err}`);
   }
 };
   return (
