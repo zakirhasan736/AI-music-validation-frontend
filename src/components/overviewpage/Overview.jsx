@@ -40,8 +40,8 @@ const ResultPage = ({ result }) => {
   const router = useRouter();
   const [data, setData] = useState([]);
   const [items, setItems] = useState([]);
-  const [expandedIndex, setExpandedIndex] = useState<number>(0);
-  const [page, setPage] = useState<number>(1);
+  const [expandedIndex, setExpandedIndex] = useState(0);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     if (result) {
