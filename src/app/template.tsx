@@ -1,5 +1,5 @@
 'use client';
-
+import { Suspense } from 'react';
 import Header from '@/components/common/header/header';
 import Footer from '@/components/common/footer/footer';
 import AuthProvider from '@utils/AuthProvider';
@@ -9,9 +9,13 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   return (
     <AuthProvider>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       <main>{children}</main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </AuthProvider>
   );
 }

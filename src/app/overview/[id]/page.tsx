@@ -7,7 +7,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useSession } from 'next-auth/react';
 import { setResult } from '@/store/analyzeSlice';
-import ResultPage from '@/pages-components/overviewpage/Overview';
+import ResultPage from '@/components/overviewpage/Overview';
 
 
 export default function OverviewByIdPage() {
