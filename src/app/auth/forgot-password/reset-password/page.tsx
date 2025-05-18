@@ -82,7 +82,7 @@ const ResetPasswordPage: React.FC = () => {
 
     setCodeValid('checking');
     try {
-      const res = await axios.post('http://localhost:8000/auth/verify-reset', {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/verify-reset`, {
         email,
         code: input,
       });
@@ -110,7 +110,7 @@ const ResetPasswordPage: React.FC = () => {
   // 🔁 Handle Resend Code
   const handleResendCode = async () => {
     try {
-      const res = await axios.post('http://localhost:8000/auth/request-reset', {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/request-reset`, {
         email,
       });
       if (res.status === 200) {
@@ -151,7 +151,7 @@ const ResetPasswordPage: React.FC = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        'http://localhost:8000/auth/reset-password',
+        `${process.env.NEXT_PUBLIC_API_URL}/auth/reset-password`,
         {
           email,
           code,

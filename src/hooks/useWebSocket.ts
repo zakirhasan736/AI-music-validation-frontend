@@ -12,7 +12,10 @@ export default function useWebSocketProgress(
   const router = useRouter();
 
   useEffect(() => {
-    const socket = new WebSocket('ws://localhost:8000/ws/analyze');
+    const socket = new WebSocket(
+      process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8000/ws/analyze'
+    );
+    
 
     socket.onopen = () => console.log('🔌 WebSocket connected');
 

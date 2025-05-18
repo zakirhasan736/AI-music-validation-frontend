@@ -17,7 +17,7 @@ const RequestResetPasswordPage: React.FC = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:8000/auth/request-reset', {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/request-reset`, {
         email,
       });
 
