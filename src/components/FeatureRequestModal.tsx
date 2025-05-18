@@ -93,7 +93,7 @@ const FeatureRequestModal = ({
         >
           <motion.div
             ref={modalRef}
-            className="bg-[#0D0E11] request-feature-wrapper w-full max-w-md p-12 text-white relative"
+            className="bg-[#0D0E11] request-feature-wrapper w-full max-w-md py-10 px-8 sm:p-12 text-white relative"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
@@ -107,13 +107,13 @@ const FeatureRequestModal = ({
               Close
             </button>
 
-            <h2 className="text-[24px] text-mono-0 leading-[120%] font-bold font-roboto mb-8 text-center">
+            <h2 className="text-[20px] sm:text-[24px]  text-mono-0 leading-[120%] font-bold font-roboto mb-8 text-center">
               Feature Request
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="mb-4 block font-roboto font-normal text-[16px] md:leading-[150%] leading-[130%] text-neutral-light">
+                <label className="mb-4 block font-roboto font-normal text-[14px] sm:text-[16px] md:leading-[150%] leading-[130%] text-neutral-light">
                   What feature are you missing?
                 </label>
                 <input
@@ -122,11 +122,11 @@ const FeatureRequestModal = ({
                   onChange={e => setRequest(e.target.value)}
                   placeholder="Your request"
                   required
-                  className="w-full px-3 py-3 border border-neutral-light bg-transparent text-mono-0 h-12  placeholder:text-neutral-light placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-none focus:border-mono-0 focus:ring-1 focus:ring-mono-0 "
+                  className="w-full px-3 py-3 border border-neutral-light bg-transparent text-mono-0 h-12  placeholder:text-neutral-light placeholder:text-[14px] sm:placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-none focus:border-mono-0 focus:ring-1 focus:ring-mono-0 "
                 />
               </div>
               <div>
-                <label className="mb-4 block font-roboto font-normal text-[16px] md:leading-[150%] leading-[130%] text-neutral-light">
+                <label className="mb-4 block font-roboto font-normal text-[14px] sm:text-[16px] md:leading-[150%] leading-[130%] text-neutral-light">
                   What problem would it solve for you?
                 </label>
                 <textarea
@@ -134,13 +134,13 @@ const FeatureRequestModal = ({
                   value={problem}
                   onChange={e => setProblem(e.target.value)}
                   required
-                  className="w-full px-3 py-3 bg-black border border-neutral-light h-24 resize-none placeholder:text-neutral-light placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-none focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
+                  className="w-full px-3 py-3 bg-black border border-neutral-light h-24 resize-none placeholder:text-neutral-light placeholder:text-[14px] sm:placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-none focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
                 />
               </div>
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-white text-black py-2 font-medium hover:bg-gray-200 transition cursor-pointer"
+                className="w-full bg-white text-black py-2 font-medium hover:bg-gray-200 text-[12px] sm:text-[16px] transition cursor-pointer"
               >
                 {loading
                   ? 'Sending...'

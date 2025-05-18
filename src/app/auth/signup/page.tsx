@@ -46,8 +46,8 @@ const LogOutPage: React.FC = () => {
   return (
     <div className="auth-page-main-wrapper flex flex-col items-center justify-center h-full pt-[25px] pb-14">
       <div className="custom-container max-w-[480px] mx-auto">
-        <div className="auth-content-area p-12">
-          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[48px] text-mono-01 text-center">
+        <div className="auth-content-area px-6 py-10 sm:p-12">
+          <h2 className="auth-title mb-4 sm:mb-8 font-roboto font-bold leading-[120%] text-[28px] sm:text-[48px] text-mono-01 text-center">
             Sign Up
           </h2>
 
@@ -57,10 +57,10 @@ const LogOutPage: React.FC = () => {
               className="auth-form flex flex-col gap-0"
             >
               {/* Email */}
-              <div className="form-group mb-4">
+              <div className="form-group mb-2 sm:mb-4">
                 <label
                   htmlFor="email"
-                  className="form-label mb-1 text-[16px] text-mono-0 font-roboto block"
+                  className="form-label mb-1 text-[14px] sm:text-[16px] text-mono-0 font-roboto block"
                 >
                   Email <span className="text-error">*</span>
                 </label>
@@ -76,10 +76,10 @@ const LogOutPage: React.FC = () => {
               </div>
 
               {/* Password */}
-              <div className="form-group mb-4 relative">
+              <div className="form-group mb-2 sm:mb-4 relative">
                 <label
                   htmlFor="password"
-                  className="form-label mb-1 text-[16px] text-mono-0 font-roboto block"
+                  className="form-label mb-1 text-[14px] sm:text-[16px] text-mono-0 font-roboto block"
                 >
                   Password <span className="text-error">*</span>
                 </label>
@@ -144,14 +144,14 @@ const LogOutPage: React.FC = () => {
               <div className="form-btn-area w-full">
                 <button
                   type="submit"
-                  className="primary-btn w-full cursor-pointer px-6 py-3 bg-mono-0 border border-mono-0 font-roboto text-[16px] text-mono-100 mb-4"
+                  className="primary-btn w-full cursor-pointer px-6 py-2 sm:py-3 bg-mono-0 border border-mono-0 font-roboto text-[14px] sm:text-[16px] text-mono-100 mb-4"
                 >
                   Sign Up
                 </button>
                 <button
                   type="button"
                   onClick={handleGoogleLogin}
-                  className="secondary-btn w-full px-6 py-3 flex items-center justify-center gap-3 border border-mono-0 text-mono-0 cursor-pointer"
+                  className="secondary-btn w-full  px-6 py-2 sm:py-3 flex text-[14px] sm:text-[16px] items-center justify-center gap-3 border border-mono-0 text-mono-0 cursor-pointer"
                 >
                   <GoogleIcon /> Sign Up with Google
                 </button>
@@ -159,7 +159,7 @@ const LogOutPage: React.FC = () => {
             </form>
 
             <div className="auth-footer text-center mt-6">
-              <p className="font-roboto text-mono-0 text-[16px]">
+              <p className="font-roboto text-mono-0 text-[14px] sm:text-[16px] font-normal leading-[150%]">
                 Already have an account?{' '}
                 <Link
                   href={`/auth/login?redirect=${encodeURIComponent(

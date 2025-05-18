@@ -46,8 +46,8 @@ const LogeInPage: React.FC = () => {
   return (
     <div className="auth-page-main-wrapper flex flex-col items-center justify-center h-full pt-[25px] pb-14">
       <div className="custom-container max-w-[480px] mx-auto">
-        <div className="auth-content-area p-12">
-          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[48px] text-mono-01 text-center">
+        <div className="auth-content-area px-6 py-10 sm:p-12">
+          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[28px] sm:text-[48px] text-mono-01 text-center">
             Log In
           </h2>
           <div className="auth-middle-area">
@@ -59,7 +59,7 @@ const LogeInPage: React.FC = () => {
                 <div className="form-group mb-4">
                   <label
                     htmlFor="email"
-                    className="form-label mb-1 text-[16px] text-left text-mono-60 font-roboto font-normal leading-[150%] block"
+                    className="form-label mb-1 text-[14px] sm:text-[16px] text-left text-mono-60 font-roboto font-normal leading-[150%] block"
                   >
                     Email{' '}
                     <span className="required relative top-[-5px] text-error">
@@ -71,7 +71,7 @@ const LogeInPage: React.FC = () => {
                     id="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
-                    className="form-input  pl-3 pr-4 py-3 bg-transparent text-mono-0 w-full h-12 border border-mono-60 placeholder:text-neutral-light placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-none focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
+                    className="form-input  pl-3 pr-4 py-3 bg-transparent text-mono-0 w-full h-12 border border-mono-60 placeholder:text-neutral-light placeholder:text-[14px] sm:placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-none focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
                     placeholder="Email"
                     required
                   />
@@ -79,7 +79,7 @@ const LogeInPage: React.FC = () => {
                 <div className="form-group relative">
                   <label
                     htmlFor="password"
-                    className="form-label mb-1 text-[16px] text-left text-mono-60 font-roboto font-normal leading-[150%] block"
+                    className="form-label mb-1 text-[14px sm:text-[16px] text-left text-mono-60 font-roboto font-normal leading-[150%] block"
                   >
                     Password{' '}
                     <span className="required relative top-[-5px] text-error">
@@ -108,17 +108,17 @@ const LogeInPage: React.FC = () => {
                     )}
                   </button>
                 </div>
-                <div className="divider my-4"></div>
+                <div className="divider my-3 sm:my-4"></div>
                 <button
                   type="submit"
-                  className="primary-btn cursor-pointer px-6 py-3 bg-mono-0 rounded-none border border-mono-0 font-roboto font-normal leading-[150%] text-[16px] text-mono-100 mb-4"
+                  className="primary-btn cursor-pointer px-6 py-3 bg-mono-0 rounded-none border border-mono-0 font-roboto text-[14px] sm:text-[16px] font-normal leading-[150%] text-mono-100 mb-3 sm:mb-4"
                 >
                   Log In
                 </button>
                 <button
                   type="button"
                   onClick={handleGoogleLogin}
-                  className="secondary-btn cursor-pointer px-6 flex justify-center items-center gap-3 py-3 bg-transparent rounded-none border border-mono-0 font-roboto font-normal leading-[150%] text-[16px] text-mono-0"
+                  className="secondary-btn cursor-pointer px-6 flex justify-center items-center gap-3 py-3 bg-transparent rounded-none border border-mono-0 font-roboto text-[14px] sm:text-[16px] font-normal leading-[150%] text-mono-0"
                 >
                   <GoogleIcon /> Log In with Google
                 </button>
@@ -129,15 +129,15 @@ const LogeInPage: React.FC = () => {
                 href={`/auth/forgot-password/request-reset-password?redirect=${encodeURIComponent(
                   redirectTo
                 )}`}
-                className="font-roboto underline font-normal text-[#EAEAEA] text-[16px] leading-[150%]"
+                className="font-roboto underline  text-[#EAEAEA] text-[14px] sm:text-[16px] font-normal leading-[150%]"
               >
                 Forgot your password?
               </Link>
-              <p className="mt-3 font-roboto font-normal text-mono-0 text-[16px] leading-[150%]">
+              <p className="mt-3 font-roboto  text-mono-0 text-[14px] sm:text-[16px] leading-[150%]">
                 {/* solved here issue */}
                 Don&#39;t have an account?{' '}
                 <Link
-                  className="font-roboto underline font-normal text-mono-0 text-[16px] leading-[150%]"
+                  className="font-roboto underline  text-mono-0 text-[14px] sm:text-[16px] font-normal leading-[150%]"
                   href={`/auth/signup?redirect=${encodeURIComponent(
                     redirectTo
                   )}`}

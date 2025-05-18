@@ -189,8 +189,8 @@ const ResetPasswordPage: React.FC = () => {
   return (
     <div className="auth-page-main-wrapper flex flex-col items-center justify-center h-full pt-[25px] pb-14">
       <div className="custom-container max-w-[480px] mx-auto">
-        <div className="auth-content-area p-12">
-          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[28px] text-mono-01 text-center">
+        <div className="auth-content-area py-10 sm:p-12">
+          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[28px] sm:text-[48px] text-mono-01 text-center">
             Reset password
           </h2>
 
@@ -204,7 +204,7 @@ const ResetPasswordPage: React.FC = () => {
               <div className="form-group relative mb-1">
                 <label
                   htmlFor="code"
-                  className="form-label mb-1 text-[16px] text-left text-mono-60 font-roboto font-normal leading-[150%] block"
+                  className="form-label mb-1 text-[14px] sm:text-[16px] text-left text-mono-60 font-roboto font-normal leading-[150%] block"
                 >
                   6-digit Reset Code
                   <span className="required relative top-[-5px] text-error">
@@ -217,7 +217,7 @@ const ResetPasswordPage: React.FC = () => {
                   value={code}
                   onChange={e => handleCodeInput(e.target.value)}
                   maxLength={6}
-                  className="form-input pr-10 pl-3 py-3 bg-transparent text-mono-0 w-full h-12 border border-mono-60 placeholder:text-mono-60 placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-mono-0 focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
+                  className="form-input pr-10 pl-3 py-3 bg-transparent text-mono-0 w-full h-12 border border-mono-60 placeholder:text-mono-60 sm:placeholder:text-[16px] placeholder:text-[14px] placeholder:font-normal placeholder:font-roboto focus:outline-mono-0 focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
                   placeholder="6-digit Reset Code"
                   required
                 />
@@ -270,7 +270,7 @@ const ResetPasswordPage: React.FC = () => {
                   id="password"
                   value={newPassword}
                   onChange={e => setNewPassword(e.target.value)}
-                  className="form-input pl-3 pr-4 py-3 bg-transparent text-mono-0 w-full h-12 border border-mono-60 placeholder:text-mono-60 placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-mono-0 focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
+                  className="form-input pl-3 pr-4 py-3 bg-transparent text-mono-0 w-full h-12 border border-mono-60 placeholder:text-mono-60 sm:placeholder:text-[16px] placeholder:text-[14px] placeholder:font-normal placeholder:font-roboto focus:outline-mono-0 focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
                   placeholder="Password"
                   required
                 />
@@ -304,7 +304,7 @@ const ResetPasswordPage: React.FC = () => {
                   id="confirm-password"
                   value={confirmPassword}
                   onChange={e => setConfirmPassword(e.target.value)}
-                  className="form-input pl-3 pr-4 py-3 bg-transparent text-mono-0 w-full h-12 border border-mono-60 placeholder:text-mono-60 placeholder:text-[16px] placeholder:font-normal placeholder:font-roboto focus:outline-mono-0 focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
+                  className="form-input pl-3 pr-4 py-3 bg-transparent text-mono-0 w-full h-12 border border-mono-60 placeholder:text-mono-60 sm:placeholder:text-[16px] placeholder:text-[14px] placeholder:font-normal placeholder:font-roboto focus:outline-mono-0 focus:border-mono-0 focus:ring-1 focus:ring-mono-0"
                   placeholder="Confirm password"
                   required
                 />

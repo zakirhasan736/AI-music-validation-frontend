@@ -55,8 +55,8 @@ const RequestResetPasswordPage: React.FC = () => {
   return (
     <div className="auth-page-main-wrapper flex flex-col items-center justify-center h-full pt-[25px] pb-14">
       <div className="custom-container max-w-[480px] mx-auto">
-        <div className="auth-content-area p-12">
-          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[28px] text-mono-01 text-center">
+        <div className="auth-content-area px-6 py-10 sm:p-12">
+          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[28px] sm:text-[48px] text-mono-01 text-center">
             Forgot password
           </h2>
 
@@ -69,7 +69,7 @@ const RequestResetPasswordPage: React.FC = () => {
               <div className="form-group">
                 <label
                   htmlFor="email"
-                  className="form-label mb-1 text-[16px] text-mono-60 font-roboto block"
+                  className="form-label mb-1 text-[14px] sm:text-[16px] text-mono-60 font-roboto block"
                 >
                   Email <span className="text-error">*</span>
                 </label>
@@ -92,7 +92,7 @@ const RequestResetPasswordPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="primary-btn w-full cursor-pointer px-6 py-3 bg-mono-0 text-mono-100 border border-mono-100 font-roboto text-[16px] mb-4"
+                  className="primary-btn w-full cursor-pointer px-6 py-3 bg-mono-0 text-mono-100 border border-mono-100 font-roboto text-[14px] sm:text-[16px] mb-4"
                 >
                   {loading ? 'Sending...' : 'Request Reset Code'}
                 </button>

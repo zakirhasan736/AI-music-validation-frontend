@@ -117,13 +117,13 @@ const handleUpload = async (file: File) => {
         What is this instrument? <span className="text-sm ml-1">(BETA)</span>
       </h1>
 
-      <p className="text-[28px] sm:text-[40px] text-center font-roboto-condensed font-bold text-mono-60 mb-10">
+      <p className="text-[18px] sm:text-[40px] leading-[130%] text-center font-roboto-condensed font-bold text-mono-60 sm:mb-10 mb-6">
         Find any instrument’s name in seconds.
       </p>
 
       {/* === Upload Area === */}
       <div
-        className={`w-full max-w-[1116px] border-2 border-dashed rounded-[8px] p-10 pb-[38px] flex flex-col items-center justify-center cursor-pointer transition
+        className={`w-full max-w-[1116px] border-2 border-dashed rounded-[8px] p-8 sm:p-10 sm:pb-[38px] flex flex-col items-center justify-center cursor-pointer transition
         ${
           isDragActive
             ? 'bg-zinc-800 border-sky-500'
@@ -134,18 +134,18 @@ const handleUpload = async (file: File) => {
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
       >
-        <div className="audio-file-icon flex items-center flex-col justify-center mb-6">
+        <div className="audio-file-icon flex items-center flex-col justify-center w-12 h-12 sm:w-20 sm:h-20 sm:mb-6 mb-3">
           <AudioFileIcons />
         </div>
         <div className="flex items-center gap-0 cursor-pointer bg-mono-0 rounded-[6px] overflow-hidden">
-          <span className="text-[#000] text-[16px] border-r bg-mono-0 font-normal leading-[150%] py-3 px-6 font-roboto">
+          <span className="text-[#000] sm:text-[16px] text-[12px] border-r bg-mono-0 font-normal leading-[150%] py-2 px-3 sm:py-3 sm:px-6 font-roboto">
             Upload file
           </span>{' '}
-          <span className="arrow-down-icon py-3 px-4 bg-mono-0">
+          <span className="arrow-down-icon py-2 px-2 sm:py-3 sm:px-4 bg-mono-0">
             <ArrowDownIcon />
           </span>
         </div>
-        <p className="text-[#8A888C] text-[8px] font-bold font-roboto leading-[130%] h-4 flex justify-center items-center mt-[14px]">
+        <p className="text-[#8A888C] text-[12px] sm:text-[8px] font-normal leading-[130%]  font-bold font-roboto leading-[130%] h-4 flex justify-center items-center mt-[14px]">
           or drop audio files here
         </p>
 
@@ -182,7 +182,7 @@ const handleUpload = async (file: File) => {
       {/* === CTA Button === */}
       <button
         type="button"
-        className="mt-12 py-3 px-6 bg-sky-blue text-white text-sm font-medium rounded-full shadow-lg hover:bg-sky-600 transition cursor-pointer"
+        className="mt-7 sm:mt-12 py-2 sm:py-3 sm:px-6 px-4 bg-sky-blue text-white text-[12px]  sm:text-[14px] font-medium rounded-full shadow-lg hover:bg-sky-600 transition cursor-pointer"
       >
         Win a free AKAI Professional MPK Mini MK3!
       </button>

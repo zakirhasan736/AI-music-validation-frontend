@@ -117,20 +117,19 @@ const ResultPage = ({ result }) => {
         <div className="analyze-content-area">
           <div className="analyze-instrument-area border border-mono-0">
             {/* Header + Actions */}
-            <div className="flex flex-col md:flex-row justify-between items-end p-6 gap-3">
+            <div className="flex flex-col md:flex-row justify-between item-left sm:items-end py-4 px-5 sm:p-6 gap-3">
               <div>
-                <h2 className="font-roboto font-bold text-left text-[24px] leading-[150%] text-mono-0 mb-1">
-                  {items?.file_name ||
-                    'Instrument Detection Result'}
+                <h2 className="font-roboto font-bold text-left text-[20px] sm:text-[24px] leading-[150%] text-mono-0 mb-1">
+                  {items?.file_name || 'Instrument Detection Result'}
                 </h2>
-                <p className="mb-0 text-[16px] leading-[150%] text-mono-0 font-roboto font-normal">
+                <p className="mb-0 text-[14px] sm:text-[16px] leading-[150%] text-mono-0 font-roboto font-normal">
                   Below are the detected instruments and their confidence
                   scores. Click to expand details.
                 </p>
               </div>
               <div className="flex gap-3 flex-wrap">
                 <button
-                  className="cursor-pointer font-robot font-normal text-mono-100 text-center leading-[150%] flex justify-center items-center bg-mono-0 py-2 px-5 transition rounded-[6px] border border-mono-0"
+                  className="cursor-pointer font-robot font-normal text-mono-100 text-center leading-[150%] flex justify-center items-center bg-mono-0 text-[14px] sm:text-[18px] py-2 px-3 sm:px-5 transition rounded-[6px] border border-mono-0"
                   onClick={() => router.push('/')}
                 >
                   Upload New File
@@ -152,14 +151,14 @@ const ResultPage = ({ result }) => {
 
             {/* Instrument Details */}
             <div className="instrument-detection-details">
-              <div className="instrument-details-header bg-mono-70  border border-mono-0 px-6 py-4 grid md:grid-cols-12 grid-cols-6 gap-5 items-center ">
-                <p className="name md:col-span-3 col-span-full text-mono-0 text-left text-[16px] font-semibold font-roboto md:leading-[150%] leading-[130%] ">
+              <div className="instrument-details-header bg-mono-70 border border-mono-0 px-4 py-4 sm:px-6 sm:py-4 grid sm:grid-cols-12 grid-cols-6 gap-3 sm:gap-5 items-center ">
+                <p className="name col-span-2 sm:col-span-3 text-mono-0 text-left text-[14px] sm:text-[16px] font-semibold font-roboto md:leading-[150%] leading-[130%] ">
                   Name
                 </p>
-                <p className="confidence md:col-span-9 col-span-full text-mono-0 text-left text-[16px] font-semibold font-roboto md:leading-[150%] leading-[130%] ">
+                <p className="confidence col-span-4 sm:col-span-9 text-mono-0 text-right sm:text-left text-[14px] sm:text-[16px] font-semibold font-roboto md:leading-[150%] leading-[130%] ">
                   Confidence Score
                 </p>
-              </div>
+              </div> 
               {paginatedData.map((instrument, idx) => {
                 // const instrument = item.instrument;
                 const isOpen = idx === expandedIndex;
@@ -168,19 +167,19 @@ const ResultPage = ({ result }) => {
                     <div className="instrument-detection-item" key={idx}>
                       <button
                         onClick={() => setExpandedIndex(isOpen ? -1 : idx)}
-                        className={`w-full px-5 py-7 grid md:grid-cols-12 grid-cols-6 gap-5 items-center  transition cursor-pointer ${
+                        className={`w-full px-4 sm:px-5 py-5 sm:py-7 grid md:grid-cols-12 grid-cols-6 gap-5 items-center  transition cursor-pointer ${
                           isOpen
                             ? 'border-b border-t fast:border-t-0 last:border-b-0'
                             : 'border-b border-t fast:border-t-0 last:border-b-0'
                         }`}
                       >
-                        <span className="md:col-span-3 flex capitalize items-center gap-3 col-span-full text-mono-0 text-left text-[16px] font-medium font-roboto md:leading-[150%] leading-[130%]">
+                        <span className="sm:col-span-3 flex capitalize items-center gap-3 col-span-2 text-mono-0 text-left text-[16px] font-medium font-roboto md:leading-[150%] leading-[130%]">
                           <span className="icons-arrow">
                             {isOpen ? <AngleUpIcon /> : <AngleDownIcon />}
                           </span>{' '}
                           {instrument.instrument}
                         </span>
-                        <span className="md:col-span-9 col-span-full text-mono-0 text-left text-[16px] font-medium font-roboto md:leading-[150%] leading-[130%]">
+                        <span className="sm:col-span-9 col-span-4 text-right sm:text-left text-mono-0 text-left text-[16px] font-medium font-roboto md:leading-[150%] leading-[130%]">
                           {(instrument.confidence * 100).toFixed(1)}%
                         </span>
                       </button>
@@ -195,8 +194,8 @@ const ResultPage = ({ result }) => {
                             className="overflow-hidden instrument-item-details-content"
                           >
                             <div className="grid md:grid-cols-12 col-span-6 gap-5">
-                              <div className="md:col-span-6 col-span-full grid gap-5 md:grid-cols-2 grid-cols-full">
-                                <ul className="instrument-details-left-cont flex flex-col gap-10 md:pl-14 pl-6 pr-6 py-7">
+                              <div className="md:col-span-6 col-span-full grid gap-3 sm:gap-5 md:grid-cols-2 grid-cols-full">
+                                <ul className="instrument-details-left-cont flex flex-col gap-6 sm:gap-10 md:pl-14 pl-6 pr-6 sm:py-7 pt-4 pb-3">
                                   <li>
                                     <p className="font-roboto font-semibold text-[14px] text-mono-0 md:leading-[150%] leading-[130%] mb-1">
                                       <strong>Musical Category:</strong>
@@ -277,7 +276,7 @@ const ResultPage = ({ result }) => {
                                     </ul>
                                   </div> */}
                                 </ul>
-                                <ul className="instrument-details-right-cont flex flex-col gap-10 px-5 py-7">
+                                <ul className="instrument-details-right-cont flex flex-col gap-6 sm:gap-10 px-5 sm:py-7 pt-2 pb-0">
                                   <li>
                                     <p className="font-roboto font-semibold text-[14px] text-mono-0 md:leading-[150%] leading-[130%] mb-1">
                                       <strong>Key:</strong>
@@ -310,7 +309,7 @@ const ResultPage = ({ result }) => {
                                   alt={instrument.instrument_str}
                                   fill
                                   className="object-cover"
-                                  onError={(e) => {
+                                  onError={e => {
                                     e.target.src =
                                       '/images/instruments/instrument-image.jpg';
                                   }}

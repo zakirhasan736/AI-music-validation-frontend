@@ -11,11 +11,11 @@ const Footer = () => {
 const { data: session } = useSession();
   return (
     <>
-      <div className="footer-section pb-2">
+      <div className="footer-section sm:pb-2">
         <div className="custom-container">
-          <div className="footer-wrapper flex items-center justify-between py-3">
+          <div className="footer-wrapper flex flex-col-reverse sm:flex-row items-center gap-2 sm:gap-0 justify-between sm:py-3 pb-1 pt-2">
             <div className="footer-left-cont">
-              <p className="copyright-content text-[16px] font-roboto-condensed font-normal leading-[150%] text-mono-60">
+              <p className="copyright-content text-[14px] sm:text-[16px] font-roboto-condensed font-normal leading-[150%] text-mono-60">
                 ⓒ 2025. WITI
               </p>
             </div>
@@ -27,7 +27,7 @@ const { data: session } = useSession();
                       if (!session) return toast.error('Please log in first');
                       setShowModal(true);
                     }}
-                    className="text-[16px] font-roboto-condensed font-normal leading-[150%] hover:text-sky-blue text-mono-60 transition cursor-pointer"
+                    className="text-[14px] sm:text-[16px] font-roboto-condensed font-normal leading-[150%] hover:text-sky-blue text-mono-60 transition cursor-pointer"
                   >
                     Request A Feature
                   </button>
@@ -35,7 +35,7 @@ const { data: session } = useSession();
                 <li className="nav-item">
                   <Link
                     href="#"
-                    className="text-[16px] font-roboto-condensed text-mono-60 hover:text-sky-blue transition"
+                    className="text-[14px] sm:text-[16px] font-roboto-condensed text-mono-60 hover:text-sky-blue transition"
                   >
                     Terms of Use
                   </Link>
@@ -43,7 +43,7 @@ const { data: session } = useSession();
                 <li className="nav-item">
                   <Link
                     href="#"
-                    className="text-[16px] font-roboto-condensed text-mono-60 hover:text-sky-blue transition"
+                    className="text-[14px] sm:text-[16px] font-roboto-condensed text-mono-60 hover:text-sky-blue transition"
                   >
                     Privacy Policy
                   </Link>
