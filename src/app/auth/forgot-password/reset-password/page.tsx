@@ -190,7 +190,7 @@ const ResetPasswordPage: React.FC = () => {
     <div className="auth-page-main-wrapper flex flex-col items-center justify-center h-full pt-[25px] pb-14">
       <div className="custom-container max-w-[480px] mx-auto">
         <div className="auth-content-area py-10 sm:p-12">
-          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[28px] sm:text-[48px] text-mono-01 text-center">
+          <h2 className="auth-title mb-8 font-roboto font-bold leading-[120%] text-[28px] sm:text-[38px] text-mono-01 text-center">
             Reset password
           </h2>
 
